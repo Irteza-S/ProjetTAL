@@ -30,8 +30,21 @@ python2.7 script1.py wsj_0010_sample.txt.pos.stanford wsj_0010_sample_converted.
     Exemple :
 
 ```bash
-python2.7 script1.py wsj_0010_sample.txt.pos.stanford wsj_0010_sample_converted.txt.pos.stanford
+- python2.7 UniversalConverter.py wsj_0010_sample_edited.txt.pos.stanford POSTags_PTB_Universal_Linux.txt tmp.txt
+- python2.7 UniversalConverter.py wsj_0010_sample.pos.ref POSTags_PTB_Universal_Linux.txt tmp1.txt
 ```
+
+
+2 - Extraction d’entités nommées
+
+Il faut lancer le script TP1_ExtractEntity.py avec 2 arguments... :
+
+```bash
+python2.7 script.py wsj_0010_sample.txt.ner.output k.txt
+```
+
+
+
 
 
 ```python
