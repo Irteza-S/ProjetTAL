@@ -18,73 +18,95 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
     
     Exemple :
 
-```bash
--> python2.7 script1.py wsj_0010_sample.txt.pos.stanford wsj_0010_sample_converted.txt.pos.stanford
-```
+    ```bash
+    -> python2.7 TP1_1.py wsj_0010_sample.txt.pos.stanford wsj_0010.txt.pos.stanford.formated
+    ```
+
+    On lance ensuite la comparaison :
+    ```bash
+    -> python2.7 evaluate.py wsj_0010.txt.pos.stanford.formated wsj_0010_sample.pos.ref
+    ```
 
 2)  Evaluation avec étiquettes universelles wsj_0010_sample.txt.pos.stanford et wsj_0010_sentence.pos.ref (s'assurer au préalable qu'ils sont tout les deux au bon format), on utilise le script nommé UniversalConverter.py qui prend 3 paramètres : le premier est le path vers le fichier à convertir, le deuxième est le fichier de référence et le troisième est le fichier de sorti
 
     Exemple :
 
+    ```bash
+    -> python2.7 UniversalConverter.py wsj_0010_sample.txt.pos.stanford.formated POSTags_PTB_Universal_Linux.txt  wsj_0010_sample.txt.pos.stanford.formated.univ
+    -> python2.7 UniversalConverter.py wsj_0010_sample.pos.ref POSTags_PTB_Universal_Linux.txt wsj_0010_sample.pos.ref.univ
+    ```
+
+    On lance ensuite la comparaison :
+    ```bash
+    -> python2.7 evaluate.py wsj_0010.txt.pos.stanford.formated.univ wsj_0010_sample.pos.ref.univ
+    ```
+
+
+2 - Evaluation d’entités nommées
+
+
+On lance d'abords le Stanford NE Recognizer sur le fichier "wsj_0010_sample.txt.ner.stanford" de la manière suivante :
+
 ```bash
--> python2.7 UniversalConverter.py wsj_0010_sample_edited.txt.pos.stanford POSTags_PTB_Universal_Linux.txt tmp.txt
--> python2.7 UniversalConverter.py wsj_0010_sample.pos.ref POSTags_PTB_Universal_Linux.txt tmp1.txt
+-> java -mx600m -cp stanford-ner.jar:lib/* edu.stanford.nlp.ie.crf.CRFClassifier -loadClassifier classifiers/english.all.3class.distsim.crf.ser.gz -textFile wsj_0010_sample.txt > wsj_0010_sample.txt.ner.stanford.output
 ```
 
-
-2 - Extraction d’entités nommées
-
-Il faut lancer le script TP1_ExtractEntity.py avec 2 arguments... :
+Pour ensuite extraire les entités nommées, il faut lancer le script TP1_ExtractEntity.py avec 2 arguments : le premier est le fichier de sortit brut de Stanford NE Recognizer (wsj_0010_sample.txt.ner.stanford.output) et le deuxième le fichier de résultat final
 
 ```bash
--> python2.7 script.py wsj_0010_sample.txt.ner.output k.txt
+-> python2.7 TP1_ExtractEntity.py wsj_0010_sample.txt.ner.stanford.output wsj_0010_sample.txt.ner.stanford.output.formated
 ```
+
+On obtiens donc "wsj_0010_sample.txt.ner.stanford.output.formated" sous la forme :
+
+```bash
+-> 
+```
+
 
 
 ## TP2
 2 - Extraction d’entités nommées
 
-Il faut lancer le script TP2_ExtractEntiteNommees.py avec 2 arguments... :
+Il suffit de lancer le script TP2_ExtractEntiteNommees.py avec 2 arguments... : le premier est le chemin vers le fichier wsj_0010_sample.txt.se.xml et le deuxième est le chemin vers le fichier de sortie.
+
+Exemple d'utilisation
 
 ```bash
--> python2.7 TP2_ExtractEntiteNommees.py
+-> python2.7 TP2_ExtractEntiteNommees.py wsj_0010_sample.txt.se.xml extracted-data.txt
 ```
-On obtiens : 
+On obtiens le résultat suivant dans le fichier "extracted-data.txt" : 
+
+```bash
+-> 
+```
+
 
 
 3 - Analyse morpho-syntaxique
 
-Il faut lancer le script TP2_ScriptMorphoSynt.py avec 2 arguments... :
+A partir de la sortie de l’analyseur LIMA « wsj_0010_sample.txt.disambiguated.xml » ou
+« wsj_0010_sample.txt.conllu », écrire un
+étiquettes morpho-syntaxiques sous le format « Mot_Etiquette ».
+
+
+Il faut lancer le script TP2_ScriptMorphoSynt.py avec 2 arguments : le premier est le chemin vers le fichier de sortie brut de lima et le deuxième le chemin vers lequel le fichier de résultat va être écrit
 
 ```bash
--> python2.7 TP2_ScriptMorphoSynt.py
+-> python2.7 TP2_ScriptMorphoSynt.py wsj_0010_sample.txt.conllu wsj_0010_sample.txt.pos.lima
 ```
 On obtiens le fichier wsj_0010_sample.txt.pos.lima suivant : 
 
 
 
+3 - Evaluation de l’analyse morpho-syntaxique
 
+Pour convertir les étiquiettes des fichiers « wsj_0010_sample.txt.pos.lima » et « wsj_0010_sample.txt.pos.ref » en étiquettes universelles, on utilise le script ScriptLimaToUniversal.py. Ce script prend 4 paramètres : le premier est le fichier Lima à convertir, le deuxième est le dictionnaire de conversion LIMA vers PTB (POSTags_LIMA_PTB_Linux.txt), le troisième est le dictionnaire de conversion PTB vers universel (POSTags_PTB_Universal_Linux.txt) et le dernier paramètre est le nom du fichier de sortie dans lequel on retrouvera les résultats de la conversion LIMA vers Universel.
 
+Exemple d'utilisation :
 
-
-
-
-
-
-
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+```bash
+-> python2.7 ScriptLimaToUniversal.py wsj_0010_sample.txt.pos.lima POSTags_LIMA_PTB_Linux.txt POSTags_PTB_Universal_Linux.txt wsj_0010_sample.txt.pos.univ.lima
+-> python2.7 ScriptLimaToUniversal.py wsj_0010_sample.pos.ref POSTags_LIMA_PTB_Linux.txt POSTags_PTB_Universal_Linux.txt wsj_0010_sample.txt.pos.univ.ref
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
