@@ -3,7 +3,7 @@
 import os
 import sys
 
-# On recupere le fichier d'entré et l'emplacement du fichier de sortie
+# On recupere le fichier d'entrée et l'emplacement du fichier de sortie
 inputFile = sys.argv[1]
 outputFile = sys.argv[2]
 

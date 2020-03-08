@@ -3,12 +3,11 @@
 import os
 import sys
 
-# On définit les fichiers d'entrée et de sortie
-# On récupère le path du fichier auquel il faut extraire des phrases
+# On récupère le path du fichier auquel il faut extraire des phrases et le fichier de sortie
 inputFile = sys.argv[1]
 outputFile = sys.argv[2]
 
-# Variable utilisée pour savoir s'il s'agit d'un début de mot/line
+# Variables flag utilisée pour savoir s'il s'agit d'un début de mot (Begining ou Inside)
 isBegining = True
 lastLineTag = ''
 

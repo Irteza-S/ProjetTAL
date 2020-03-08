@@ -7,7 +7,7 @@ nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
 
-# On définit les fichiers d'entrée et de sortie
+# On récupère le path du fichier d'entré et de sortie
 inputFile = sys.argv[1]
 outputFile = sys.argv[2]
 
@@ -25,7 +25,7 @@ with open(inputFile, 'r') as myfile:
 
 print('\n')
 
-# Ecriture dans le fichier de sortie
+# Ecriture des mots + tags associes dans un fichier de sortie
 with open(outputFile, 'w') as fp:
 	for pair in tokens_tags:
 		fp.write(pair[0] + '\t' + pair[1] + '\n')

@@ -4,6 +4,7 @@ import os
 import sys
 
 # Récupération de l'ancien fichier ainsi que du fichier de référence
+# On récupère aussi le path vers les fichiers de sorties
 oldFileToConvert = sys.argv[1]
 refFile = sys.argv[2]
 newConvertedFile = sys.argv[3]

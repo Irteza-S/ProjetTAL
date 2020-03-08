@@ -3,13 +3,12 @@
 import os
 import sys
 
-# On définit les fichiers d'entrée et de sortie
-# On récupère le path du fichier auquel il faut extraire des phrases
+# On récupère le path du fichier auquel il faut extraire des phrases et le fichier de sortie
 inputFile = sys.argv[1]
 outputFile = sys.argv[2]
 
 
-# Variable utilisée pour savoir s'il s'agit d'un début de mot
+# Variables flag utilisées pour savoir s'il s'agit d'un début de mot (Begining ou Inside)
 isBegining = True
 lastLineTag = ''
 
@@ -47,7 +46,7 @@ with open(inputFile) as fileRead:
                     lastLineTag = previousTag
                     # On converti l'ancientag vers le tag CoNLL-2003
                     newTag = tagConverter(previousTag)
-                    # On ecrit le mot + le nouveau tag en verifie s'il sagit dun debut B (begining) ou dun I (inside)
+                    # On ecrit le mot + le nouveau tag en verifie s'il sagit d'un debut B (begining) ou d'un I (inside)
                     if (newTag == "O"):
                         isBegining = True
                         fileWrite.write(word + '\t' + newTag + '\n')

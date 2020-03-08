@@ -3,6 +3,9 @@
 import os
 import sys
 
+# On récupère le path du fichier de resultat stanford
+# On récupère le path du fichier de convertion PTB vers Universel
+# On récupère le path du fichier de sortie
 stanfordFile = sys.argv[1]
 universalFile = sys.argv[2]
 outputFile = sys.argv[3]

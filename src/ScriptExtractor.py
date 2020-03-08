@@ -3,9 +3,10 @@
 import os
 import sys
 
+# On stocke ici toutes les ponctuations existantes
 ponctuations = '''!()-[]{};:'"\,<>./?@#%^&*_~'''
 
-# On récupère le path du fichier auquel il faut extraire des phrases
+# On récupère le path du fichier auquel il faut extraire des phrases ainsi que le path du fichier de sortie
 inputFile = sys.argv[1]
 outputFile = sys.argv[2]
 

@@ -3,7 +3,7 @@
 import os
 import sys
 
-# On définit les fichiers d'entrée, de sortie et de reference
+# On définit le fichier a convertir ainsi que celui de sortie et de reference
 fileToConvert = sys.argv[1]
 refFile = sys.argv[2]
 newFile = sys.argv[3]

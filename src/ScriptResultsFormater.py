@@ -4,12 +4,15 @@ import os
 import sys
 
 # Récupération de l'ancien fichier ainsi que du fichier de référence
+# On définit les path des nouveaux fichiers de sorties
 oldFileToConvert = sys.argv[1]
 refFile = sys.argv[2]
 newConvertedFile = sys.argv[3]
 newRefFile = sys.argv[4]
 
 # On definit deux dictionnaires
+# Un pour stocker les mots et tags du fichier de reference
+# lautre pour stocker les mots et tags du fichier de resultat lima/stanford/nltk
 refFileDictionnary = []
 oldFileDictionnary = []
 

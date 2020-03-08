@@ -40,7 +40,7 @@ Modules Stanford, LIMA et NLTK.
 
 2)  Extraire les phrases du corpus "pos_reference.txt.univ"
 
-    Pour extaire les phrases du corpus "pos_reference.txt.univ", il faut lire ligne par ligne ce fichier. Lorsque la ligne lue est vide, on considère qu'il s'agit d'une fin de phrase, lorsque la ligne lue n'est pas vide on ajout le mot à la ligne courante lue. Pour réaliser cette extraction, on utilise le script "ScriptExtractor.py". Ce script prend 2 paramètres : le premier est le fichier duquel il faut extraire les phrases et le deuxième est le fichier dans lequel va se trouver le résultat de cette extraction.
+    Pour extaire les phrases du corpus "pos_reference.txt.univ", il faut lire ligne par ligne ce fichier. Lorsque la ligne lue est vide, on considère qu'il s'agit d'une fin de phrase, lorsque la ligne lue n'est pas vide on ajoute le mot à la ligne courante lue. Pour réaliser cette extraction, on utilise le script "ScriptExtractor.py". Ce script prend 2 paramètres : le premier est le fichier duquel il faut extraire les phrases et le deuxième est le fichier dans lequel va se trouver le résultat de cette extraction.
 
     Exemple d'utilisation :
 
@@ -57,7 +57,7 @@ Modules Stanford, LIMA et NLTK.
 
     <img src="./screenshoots/ErrorLima.png">
 
-    Assurez vous de ne pas avoir les deux points aux lignes 131 et 147 au sein du fichier pos_test.txt fournit à Lima : 
+    Assurez vous de ne pas avoir les deux points aux lignes 131 et 147 au sein du fichier "pos_test.txt" fournit à Lima : 
     
     <img src="./screenshoots/Error131Lima.png">
 
@@ -66,7 +66,7 @@ Modules Stanford, LIMA et NLTK.
 
     <img src="./screenshoots/Error147Lima.png">
 
-    Si les deux points sont présent, il faut les supprimer. Le fichier pos_test.txt fournit à été corrigé.
+    Si les deux points sont présent, il faut les supprimer. Le fichier pos_test.txt fournit dans /data à été corrigé.
     ___
 
     Pour Lima, on execute la commande suivante :  
@@ -220,7 +220,8 @@ Modules Stanford, LIMA et NLTK.
 3) Convertir le résultat des trois NE recognizers en étiquettes CoNLL-2003
     ___
 
-    Pour Lima, il faut utiliser le script ScriptLimaToConll.py pour extraire les résultats du NE recognizers Lima les convertir en étiquettes CoNLL-2003. Ce script va aussi convertir le fichier passé en entré dans le même format que le fichier "ne_reference.txt.conll". Le script ScriptLimaToConll.py prend 2 paramètres : le premier est le fichier de résultat brut de Lima et le second est le l'emplacement du fichier de sortie
+    Pour Lima, il faut utiliser le script ScriptLimaToConll.py pour extraire les résultats du NE recognizers Lima les convertir en étiquettes CoNLL-2003. Ce script va aussi convertir le fichier fournit en entré dans le même format que le fichier "ne_reference.txt.conll". Le script ScriptLimaToConll.py prend 2 paramètres : le premier est le fichier de résultat brut de Lima et le second est le l'emplacement du fichier de sortie
+    
     Exemple d'utilisation :
 
     ```bash
@@ -234,6 +235,8 @@ Modules Stanford, LIMA et NLTK.
     ___
 
     Pour Stanford, il faut utiliser le script ScriptStanfordToConll.py pour extraire les résultats du NE recognizers Stanford les convertir en étiquettes CoNLL-2003. Le script ScriptStanfordToConll.py prend 2 paramètres : le premier est le fichier de résultat brut de stanford et le second est le l'emplacement du fichier de sortie
+
+
     Exemple d'utilisation :
 
     ```bash

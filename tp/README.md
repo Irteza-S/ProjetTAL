@@ -7,19 +7,23 @@ Enseignant : M. Nasredine SEMMAR
 
 Groupe : Irteza SHEIKH MUHAMMAD - Maïssa KHAMIS
 
-Ce dossier contient les codes sources des script Python des trois TP
+Ce dossier contient les codes sources des scripts Python des trois TP
 
 ## Pré-requis
 
 Ubuntu 16.04 LTS et Python2.7
 
+Modules Stanford, NLTK et LIMA
+
+Fichiers sources fournis par M. SEMMAR
+
 
 ## TP1
-1 - Installation et évaluation de l’outil de désambiguïsation morpho- syntaxique de l’université de Stanford
+1 - Installation et évaluation de l’outil de désambiguïsation morpho-syntaxique de l’université de Stanford
 
 2)  Evaluation sans étiquettes universelles
 
-    Pour comparer les fichiers wsj_0010_sample.txt.pos.stanford et wsj_0010_sentence.pos.ref, il faut que les deux fichiers soient aux même format. Pour cela on utilise le script nommé TP1_1.py en rensaignant 2 paramètres : le premier est le path vers le fichier wsj_0010_sample.txt.pos.stanford et le deuxième est le fichier de sorti converti au bon format.
+    Pour comparer les fichiers wsj_0010_sample.txt.pos.stanford et wsj_0010_sentence.pos.ref, il faut que les deux fichiers soient aux même format. Pour cela on utilise le script nommé TP1_1.py en renseignant 2 paramètres : le premier est le path vers le fichier wsj_0010_sample.txt.pos.stanford et le deuxième est le fichier de sorti converti au bon format.
     
     Exemple :
 
@@ -32,7 +36,7 @@ Ubuntu 16.04 LTS et Python2.7
     -> python2.7 evaluate.py wsj_0010.txt.pos.stanford.formated wsj_0010_sample.pos.ref
     ```
 
-2)  Evaluation avec étiquettes universelles wsj_0010_sample.txt.pos.stanford et wsj_0010_sentence.pos.ref (s'assurer au préalable qu'ils sont tout les deux au bon format), on utilise le script nommé UniversalConverter.py qui prend 3 paramètres : le premier est le path vers le fichier à convertir, le deuxième est le fichier de référence et le troisième est le fichier de sorti
+2)  Evaluation avec étiquettes universelles wsj_0010_sample.txt.pos.stanford et wsj_0010_sentence.pos.ref (s'assurer au préalable qu'ils sont tout les deux au bon format), on utilise le script nommé UniversalConverter.py qui prend 3 paramètres : le premier est le path vers le fichier à convertir, le deuxième est le fichier de référence et le troisième est le fichier de sortie
 
     Exemple :
 
@@ -56,7 +60,7 @@ On lance d'abords le Stanford NE Recognizer sur le fichier "wsj_0010_sample.txt.
 -> java -mx600m -cp stanford-ner.jar:lib/* edu.stanford.nlp.ie.crf.CRFClassifier -loadClassifier classifiers/english.all.3class.distsim.crf.ser.gz -textFile wsj_0010_sample.txt > wsj_0010_sample.txt.ner.stanford.output
 ```
 
-Pour ensuite extraire les entités nommées, il faut lancer le script TP1_ExtractEntity.py avec 2 arguments : le premier est le fichier de sortit brut de Stanford NE Recognizer (wsj_0010_sample.txt.ner.stanford.output) et le deuxième le fichier de résultat final
+Pour ensuite extraire les entités nommées, il faut lancer le script TP1_ExtractEntity.py avec 2 arguments : le premier est le fichier de sortie brut de Stanford NE Recognizer (wsj_0010_sample.txt.ner.stanford.output) et le deuxième le fichier de résultat final
 
 ```bash
 -> python2.7 TP1_ExtractEntity.py wsj_0010_sample.txt.ner.stanford.output wsj_0010_sample.txt.ner.stanford.output.formated
@@ -71,7 +75,7 @@ On obtiens donc "wsj_0010_sample.txt.ner.stanford.output.formated" sous la forme
 ## TP2
 2 - Extraction d’entités nommées
 
-Il suffit de lancer le script TP2_ExtractEntiteNommees.py avec 2 arguments... : le premier est le chemin vers le fichier wsj_0010_sample.txt.se.xml et le deuxième est le chemin vers le fichier de sortie.
+Il suffit de lancer le script TP2_ExtractEntiteNommees.py avec 2 arguments : le premier est le chemin vers le fichier wsj_0010_sample.txt.se.xml et le deuxième est le chemin vers le fichier de sortie.
 
 Exemple d'utilisation
 
@@ -96,7 +100,7 @@ Il faut lancer le script TP2_ScriptMorphoSynt.py avec 2 arguments : le premier e
 ```bash
 -> python2.7 TP2_ScriptMorphoSynt.py wsj_0010_sample.txt.conllu wsj_0010_sample.txt.pos.lima
 ```
-On obtiens le fichier wsj_0010_sample.txt.pos.lima suivant : 
+On obtiens le fichier "wsj_0010_sample.txt.pos.lima" suivant : 
 
 <img src="../screenshoots/tp2-2.png">
 

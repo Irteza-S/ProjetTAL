@@ -7,6 +7,7 @@ import sys
 limaResultFile = sys.argv[1]
 outputFile = sys.argv[2]
 
+# Variable servant de flag
 lineStartCheck = False
 
 # On lit le fichier d'entré
