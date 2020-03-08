@@ -1,12 +1,17 @@
 # ProjetTAL/tp
 
+
+2019 - 2020 ET5 Polytech Paris Sud
+
+Enseignant : M. Nasredine SEMMAR
+
+Groupe : Irteza SHEIKH MUHAMMAD - Maïssa KHAMIS
+
 Ce dossier contient les codes sources des script Python des trois TP
 
 ## Pré-requis
 
 Ubuntu 16.04 LTS et Python2.7
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 
 ## TP1
@@ -59,9 +64,7 @@ Pour ensuite extraire les entités nommées, il faut lancer le script TP1_Extrac
 
 On obtiens donc "wsj_0010_sample.txt.ner.stanford.output.formated" sous la forme :
 
-```bash
--> 
-```
+<img src="../screenshoots/tp1-1.png">
 
 
 
@@ -77,10 +80,8 @@ Exemple d'utilisation
 ```
 On obtiens le résultat suivant dans le fichier "extracted-data.txt" : 
 
-```bash
--> 
-```
 
+<img src="../screenshoots/tp2-1.png">
 
 
 3 - Analyse morpho-syntaxique
@@ -97,11 +98,15 @@ Il faut lancer le script TP2_ScriptMorphoSynt.py avec 2 arguments : le premier e
 ```
 On obtiens le fichier wsj_0010_sample.txt.pos.lima suivant : 
 
+<img src="../screenshoots/tp2-2.png">
+
+
+
 
 
 3 - Evaluation de l’analyse morpho-syntaxique
 
-Pour convertir les étiquiettes des fichiers « wsj_0010_sample.txt.pos.lima » et « wsj_0010_sample.txt.pos.ref » en étiquettes universelles, on utilise le script ScriptLimaToUniversal.py. Ce script prend 4 paramètres : le premier est le fichier Lima à convertir, le deuxième est le dictionnaire de conversion LIMA vers PTB (POSTags_LIMA_PTB_Linux.txt), le troisième est le dictionnaire de conversion PTB vers universel (POSTags_PTB_Universal_Linux.txt) et le dernier paramètre est le nom du fichier de sortie dans lequel on retrouvera les résultats de la conversion LIMA vers Universel.
+Pour convertir les étiquettes des fichiers « wsj_0010_sample.txt.pos.lima » et « wsj_0010_sample.txt.pos.ref » en étiquettes universelles, on utilise le script ScriptLimaToUniversal.py. Ce script prend 4 paramètres : le premier est le fichier Lima à convertir, le deuxième est le dictionnaire de conversion LIMA vers PTB (POSTags_LIMA_PTB_Linux.txt), le troisième est le dictionnaire de conversion PTB vers universel (POSTags_PTB_Universal_Linux.txt) et le dernier paramètre est le nom du fichier de sortie dans lequel on retrouvera les résultats de la conversion LIMA vers Universel.
 
 Exemple d'utilisation :
 
@@ -110,3 +115,47 @@ Exemple d'utilisation :
 -> python2.7 ScriptLimaToUniversal.py wsj_0010_sample.pos.ref POSTags_LIMA_PTB_Linux.txt POSTags_PTB_Universal_Linux.txt wsj_0010_sample.txt.pos.univ.ref
 ```
 
+
+
+
+## TP3
+1 - Evaluation de l’analyse morpho-syntaxique de la plateforme NLTK
+    
+Utiliser le script TP3_Script1-1.py pour désambiguïser morpho-syntaxiquement le texte du fichier wsj_0010_sample.txt. Ce script prend 2 paramètres : le premier est le chemin vers le fichier "wsj_0010_sample.txt" et le deuxième est le chemin vers le fichier de sortie.
+
+Exemple d'utilisation :
+
+```bash
+-> python2.7 TP3_Script1-1.py wsj_0010_sample.txt wsj_0010_sample.txt.pos.nltk
+```
+
+Avant de comparer le fichier avec le fichier de référence , il faut faire en sorte qu'il y ai les mêmes mots sur la colonne gauche de chacun des deux fichiers. On utilise donc le script ScriptResultsFormater.py afin de réaliser cette transformation. Ce script prend 4 paramètres : le premier est le fichier de résultat nltk (wsj_0010_sample.txt.pos.nltk), le deuxième est le fichier de référence (wsj_0010_sample.pos.ref)), le troisième est le path où va être créer le fichier de résultat formaté et le dernier est la path où va être créer le fichier de référence formaté.
+
+Exemple d'utilisation :
+
+```bash
+-> python2.7 ScriptResultsFormater.py wsj_0010_sample.txt.pos.nltk wsj_0010_sample.pos.ref wsj_0010_sample.txt.pos.nltk.formated wsj_0010_sample.pos.ref.formated
+```
+
+Il suffit alors de lancer le script evaluate.py sur les deux fichiers obtenus, dans notre cas :
+```bash
+-> python2.7 evaluate.py wsj_0010_sample.txt.pos.nltk.formated wsj_0010_sample.pos.ref.formated
+```
+
+2 - Utilisation de la plateforme NLTK pour l’analyse syntaxique
+
+On utilisera le script TP3_ScriptGrammaire.py pour extraire les mots composés (chunks) ayant la structure syntaxique souhaitée présents dans le texte du fichier wsj_0010_sample.txt. Ce script prend 2 paramètres : le premier est le chemin vers le fichier wsj_0010_sample.txt, le deuxième est la structure syntaxique souhaitée. Voici les différentes structure syntaxique disponible :
+```bash
+0 = Déterminant-Adjectif-Nom
+1 = Adjectif-Nom
+2 = Nom-Nom
+3 = Adjectif-Nom-Nom
+4 = Adjectif-Adjectif-Nom
+```
+
+
+Exemple d'utilisation :
+
+```bash
+->  python2.7 TP3_ScriptGrammaire.py wsj_0010_sample.txt 3
+```
