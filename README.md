@@ -10,13 +10,18 @@ Groupe : Irteza SHEIKH MUHAMMAD - Maïssa KHAMIS
 ## Pré-requis
 
 Ubuntu 16.04 LTS et Python2.7.
-Modules Stanford, LIMA et NLTK.
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Modules Stanford, LIMA et NLTK.
 
 
 ## Architecture
 
+<ul>
+<li>src : contient les codes sources des scripts Python du projet</li>
+<li>doc : contient le rapport du projet</li>
+<li>data : contient les données manipulées pour le projet</li>
+<li>tp : contient les codes sources des scripts Python des TPs</li>
+</ul>
 
 ## Projet
 ### 1 - Evaluation de l’analyse morpho-syntaxique
@@ -247,4 +252,5 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
     ```
 
     On obtiens les résultats suivants :
+
 
