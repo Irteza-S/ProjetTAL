@@ -183,7 +183,6 @@ Modules Stanford, LIMA et NLTK.
 
     On obtiens les résultats suivant :
 
-
     <img src="./screenshoots/RESULTS2.png">
 
 
