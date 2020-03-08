@@ -37,6 +37,7 @@ Modules Stanford, LIMA et NLTK.
     ```bash
     -> python2.7 ScriptLimaToUniversal.py pos_reference.txt.lima POSTags_LIMA_PTB_Linux.txt POSTags_PTB_Universal_Linux.txt pos_reference.txt.univ
     ```
+<br/><br/>
 
 2)  Extraire les phrases du corpus "pos_reference.txt.univ"
 
@@ -47,6 +48,7 @@ Modules Stanford, LIMA et NLTK.
     ```bash
     -> python2.7 ScriptExtractor.py pos_reference.txt.univ pos_test.txt
     ```
+<br/><br/>
 
 3) Lancer les trois POS taggers sur le fichier « pos_test.txt »
 
@@ -66,7 +68,7 @@ Modules Stanford, LIMA et NLTK.
 
     <img src="./screenshoots/Error147Lima.png">
 
-    Si les deux points sont présent, il faut les supprimer. Le fichier pos_test.txt fournit dans /data à été corrigé.
+    Si les deux points sont présents, il faut les supprimer. Le fichier pos_test.txt fournit dans /data à été corrigé.
     ___
 
     Pour Lima, on execute la commande suivante :  
@@ -96,6 +98,7 @@ Modules Stanford, LIMA et NLTK.
     -> python2.7 script1-1.py pos_test.txt pos_test.txt.pos.nltk
     ```
 
+<br/><br/>
 
 
 4) Convertir les résultats des trois POS taggers en utilisant les étiquettes universelles
@@ -123,6 +126,9 @@ Modules Stanford, LIMA et NLTK.
     ```bash
     -> python2.7 ScriptNLTKToUniversal.py pos_test.txt.pos.nltk POSTags_PTB_Universal_Linux.txt pos_test.txt.pos.nltk.univ
     ```
+
+<br/><br/>
+
 
 5) Evaluation des trois POS taggers
 
@@ -181,7 +187,7 @@ Modules Stanford, LIMA et NLTK.
     <img src="./screenshoots/RESULTS2.png">
 
 
-
+<br/><br/><br/><br/>
 ### 2 - Evaluation de la reconnaissance d’entités nommées
 
 1)  Extraire les phrases du corpus "ne_reference.txt.conll"
@@ -193,6 +199,7 @@ Modules Stanford, LIMA et NLTK.
     ```bash
     -> python2.7 ScriptExtractor.py ScriptExtractor.py ne_reference.txt.conll ne_test.txt
     ```
+<br/><br/>
 
 2) Lancer les trois NE recognizers sur le fichier "ne_test.txt"
     ___
@@ -215,6 +222,9 @@ Modules Stanford, LIMA et NLTK.
     Le résultat est stocké dans le fichier ne_test.txt.stanford sous la forme :
     
     <img src="./screenshoots/part2-stanford.png">
+
+
+<br/><br/>
 
 
 3) Convertir le résultat des trois NE recognizers en étiquettes CoNLL-2003
@@ -248,6 +258,8 @@ Modules Stanford, LIMA et NLTK.
 
     <img height=200 src="./screenshoots/part2-stanford2.png">
 
+
+<br/><br/>
 
 4) Evaluation des deux NE Recognizers
 

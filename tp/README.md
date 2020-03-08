@@ -36,6 +36,9 @@ Fichiers sources fournis par M. SEMMAR
     -> python2.7 evaluate.py wsj_0010.txt.pos.stanford.formated wsj_0010_sample.pos.ref
     ```
 
+<br/><br/>
+
+
 2)  Evaluation avec étiquettes universelles wsj_0010_sample.txt.pos.stanford et wsj_0010_sentence.pos.ref (s'assurer au préalable qu'ils sont tout les deux au bon format), on utilise le script nommé UniversalConverter.py qui prend 3 paramètres : le premier est le path vers le fichier à convertir, le deuxième est le fichier de référence et le troisième est le fichier de sortie
 
     Exemple :
@@ -50,6 +53,7 @@ Fichiers sources fournis par M. SEMMAR
     -> python2.7 evaluate.py wsj_0010.txt.pos.stanford.formated.univ wsj_0010_sample.pos.ref.univ
     ```
 
+<br/><br/>
 
 2 - Evaluation d’entités nommées
 
@@ -71,7 +75,7 @@ On obtiens donc "wsj_0010_sample.txt.ner.stanford.output.formated" sous la forme
 <img src="../screenshoots/tp1-1.png">
 
 
-
+<br/><br/>
 ## TP2
 2 - Extraction d’entités nommées
 
@@ -87,7 +91,7 @@ On obtiens le résultat suivant dans le fichier "extracted-data.txt" :
 
 <img src="../screenshoots/tp2-1.png">
 
-
+<br/><br/>
 3 - Analyse morpho-syntaxique
 
 A partir de la sortie de l’analyseur LIMA « wsj_0010_sample.txt.disambiguated.xml » ou
@@ -107,7 +111,7 @@ On obtiens le fichier "wsj_0010_sample.txt.pos.lima" suivant :
 
 
 
-
+<br/><br/>
 3 - Evaluation de l’analyse morpho-syntaxique
 
 Pour convertir les étiquettes des fichiers « wsj_0010_sample.txt.pos.lima » et « wsj_0010_sample.txt.pos.ref » en étiquettes universelles, on utilise le script ScriptLimaToUniversal.py. Ce script prend 4 paramètres : le premier est le fichier Lima à convertir, le deuxième est le dictionnaire de conversion LIMA vers PTB (POSTags_LIMA_PTB_Linux.txt), le troisième est le dictionnaire de conversion PTB vers universel (POSTags_PTB_Universal_Linux.txt) et le dernier paramètre est le nom du fichier de sortie dans lequel on retrouvera les résultats de la conversion LIMA vers Universel.
@@ -121,7 +125,7 @@ Exemple d'utilisation :
 
 
 
-
+<br/><br/>
 ## TP3
 1 - Evaluation de l’analyse morpho-syntaxique de la plateforme NLTK
     
@@ -145,7 +149,7 @@ Il suffit alors de lancer le script evaluate.py sur les deux fichiers obtenus, d
 ```bash
 -> python2.7 evaluate.py wsj_0010_sample.txt.pos.nltk.formated wsj_0010_sample.pos.ref.formated
 ```
-
+<br/><br/>
 2 - Utilisation de la plateforme NLTK pour l’analyse syntaxique
 
 On utilisera le script TP3_ScriptGrammaire.py pour extraire les mots composés (chunks) ayant la structure syntaxique souhaitée présents dans le texte du fichier wsj_0010_sample.txt. Ce script prend 2 paramètres : le premier est le chemin vers le fichier wsj_0010_sample.txt, le deuxième est la structure syntaxique souhaitée. Voici les différentes structure syntaxique disponible :
